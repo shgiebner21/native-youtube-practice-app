@@ -5,6 +5,7 @@ import store from './store'
 import { StyleSheet, Text, View } from 'react-native'
 import NativeTachyons from 'react-native-style-tachyons'
 import Header from './containers/header'
+import Main from './containers/main'
 
 NativeTachyons.build({ rem: 16 }, StyleSheet)
 
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <View style={styles.container}>
         <Header />
+          <Main />
       </View>
     )
   }
