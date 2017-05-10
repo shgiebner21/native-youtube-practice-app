@@ -20,7 +20,6 @@ const Header = (props) => {
         placeholder='Name of video to search'
         cls='ba br2 h2 ml2 mr2 pa1 b--blue red'
       />
-    <Text>{props.value}</Text>
     </View>
   )
 }
