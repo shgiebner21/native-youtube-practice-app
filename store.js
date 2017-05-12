@@ -30,7 +30,14 @@ const store = createStore (
           return state
       }
     },
-    video: () => null
+    video: (state=null, action) => {
+      switch (action.type) {
+        case 'SET_VIDEO':
+          return action.payload
+        default:
+          return state
+      }
+    }
   }),
   applyMiddleware(thunk)
 )

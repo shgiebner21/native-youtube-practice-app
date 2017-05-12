@@ -3,19 +3,22 @@ import { Provider } from 'react-redux'
 import { Constants } from 'expo'
 import store from './store'
 import { StyleSheet, Text, View } from 'react-native'
+import { NativeRouter, Route } from 'react-router-native'
 import NativeTachyons from 'react-native-style-tachyons'
-import Header from './containers/header'
 import Main from './containers/main'
+import Show from './containers/show'
 
 NativeTachyons.build({ rem: 16 }, StyleSheet)
 
 class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Header />
-          <Main />
-      </View>
+      <NativeRouter>
+        <View style={styles.container}>
+          <Route exact path='/' component={Main} />
+          <Route path='/video/:id' component={Show} />
+        </View>
+      </NativeRouter>
     )
   }
 }
