@@ -22,6 +22,14 @@ const store = createStore (
           return state
       }
     },
+    videoItems: (state=[], action) => {
+      switch (action.type) {
+        case 'SET_VIDEOS':
+          return action.payload
+        default:
+          return state
+      }
+    },
     videos: (state=ds.cloneWithRows([]), action) => {
       switch (action.type) {
         case 'SET_VIDEOS':
