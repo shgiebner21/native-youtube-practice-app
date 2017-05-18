@@ -5,10 +5,12 @@ import { wrap } from 'react-native-style-tachyons'
 
 const jwt = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE0OTIzOTIyNTQsImV4cCI6MTUyMzkyODI1NCwiYXVkIjoieW91dHViZS1hcGkubm93LnNoIiwic3ViIjoiZ3Vlc3QifQ.FSMS3Bx3Adsx65IJc_svUO6wuc2oYW_8wN4TwBcBOT8'
 
-const Header = (props) => {
+const Header = props => {
   return (
-    <View>
-      <TextInput value={props.value}
+    <View cls='flx-row aic jcc h2 bg-red'>
+      <TextInput cls='flx-i ph3 bg-white red ba b--red br2 mh3'
+        value={props.value}
+        placeholder='YouTube Search'
         onChangeText={ (value) => props.dispatch({ type: 'SET_TEXT', payload: value }) }
         onSubmitEditing={ () => props.dispatch( dispatch => {
           dispatch({ type: 'FETCHING_VIDEOS' })
@@ -18,7 +20,6 @@ const Header = (props) => {
            .then(results => dispatch({ type: 'SET_VIDEOS', payload: results}))
         })}
         placeholder='Name of video to search'
-        cls='ba br2 h2 ml2 mr2 pa1 b--blue red'
       />
     </View>
   )
