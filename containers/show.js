@@ -19,23 +19,22 @@ class Show extends Component {
   }
 
   render () {
-console.log('value of pathOr(uri) is', pathOr('', ['props', 'video', 'thumbnails', 'high', 'url'], this))
     return (
       <View cls='flx-i' >
         <View cls='flx-i'>
-          <Text>{pathOr('', ['props', 'video', 'title'], this)}</Text>
+          <Text cls='pa2 ma2 ba red tc'>{pathOr('', ['props', 'video', 'title'], this)}</Text>
           <Image cls='rm-stretch h5'
             source={{
               uri: pathOr('', ['props', 'video', 'thumbnails', 'high', 'url'], this)
             }}
           />
         </View>
-        <View cls='flx-i h2 bg-lightblue'>
+        <View cls='flx-i h2 bg-lightblue jcc aic'>
           <TouchableOpacity onPress={this._handlePressButtonAsync}>
-            <Text cls='ba pv2 ph3 br2 bg-white blue'>Play Video</Text>
+            <Text cls='ba pv2 ph3 br2 bg-white blue mb4 w5 tc'>Play Video</Text>
           </TouchableOpacity>
           <Link to='/'>
-            <Text cls='ba pv2 ph3 br2 bg-white blue'>Back to Search</Text>
+            <Text cls='ba pv2 ph3 br2 bg-white blue w5 tc'>Back to Search</Text>
           </Link>
         </View>
       </View>
