@@ -30,7 +30,7 @@ const store = createStore (
           return state
       }
     },
-    videos: (state=ds.cloneWithRows([]), action) => {
+    dataSource: (state=ds.cloneWithRows([]), action) => {
       switch (action.type) {
         case 'SET_VIDEOS':
           return ds.cloneWithRows(action.payload)

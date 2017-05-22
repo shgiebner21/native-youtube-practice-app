@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { View, Text, Button, Image , TouchableOpacity } from 'react-native'
+import { View, Text, Button, TouchableOpacity } from 'react-native'
 import { WebBrowser } from 'expo'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-native'
@@ -19,20 +19,20 @@ class Show extends Component {
   }
 
   render () {
-console.log('value of pathOr(uri) is', pathOr('', ['props', 'video', 'thumbnails', 'high', 'url'], this))
+console.log('value of pathOr(title) is', pathOr('', ['props', 'video', 'title'], this))
     return (
       <View cls='flx-i' >
-        <View cls='flx-i'>
+        <View cls='flx-i hg'>
           <Text>{pathOr('', ['props', 'video', 'title'], this)}</Text>
           <Image cls='rm-stretch h5'
             source={{
-              uri: pathOr('', ['props', 'video', 'thumbnails', 'high', 'url'], this)
+              uri: pathOr('', ['video', 'thumbnails', 'high', 'url'], this.props)
             }}
           />
         </View>
         <View cls='flx-i h2 bg-lightblue'>
           <TouchableOpacity onPress={this._handlePressButtonAsync}>
-            <Text cls='ba pv2 ph3 br2 bg-white blue'>Play Video</Text>
+            <Text cls='ba pv2 ph3br2 gh-white blue'>Play Video</Text>
           </TouchableOpacity>
           <Link to='/'>
             <Text cls='ba pv2 ph3 br2 bg-white blue'>Back to Search</Text>

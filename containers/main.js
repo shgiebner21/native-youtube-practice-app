@@ -10,8 +10,9 @@ const Main = (props) => {
     <View>
       <Header />
         <ListView enableEmptySections
-                  dataSource={props.videos}
-                  renderRow={({id, ...video}) => <Row key={id} id={id} {...video} /> }
+                  dataSource={props.dataSource}
+                  renderRow={({id, ...video}) => {
+                  return <Row key={id} id={id} {...video} /> }}
         />
     </View>
   )
